@@ -2,7 +2,7 @@
     class="bg-white absolute dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 h-screen w-[300px]">
     <!-- Primary Navigation Menu -->
     <nav x-data="{ open: false }"
-        class="bg-white absolute dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 h-screen w-[300px]">
+        class="bg-white  dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 h-screen w-[300px] fixed z-50">
         <div class="flex flex-col h-full justify-between">
 
             <div>

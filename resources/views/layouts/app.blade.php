@@ -18,7 +18,7 @@
 
 <body class="font-sans antialiased">
     <div class="">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="min-h-screen  bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
@@ -31,7 +31,7 @@
             @endisset
 
             <!-- Page Content -->
-            <main class="ml-[300px] p-6">
+            <main class="ml-[300px] p-6 overflow-y-auto">
                 @yield('content')
             </main>
         </div>
