@@ -3,7 +3,7 @@
 @section('content')
     <div class="p-6 text-white min-h-screen bg-gray-900">
         <div class="wrapper max-w-7xl mx-auto">
-            <!-- La griglia principale: 1 colonna su schermi piccoli (sm:) e sotto, 3 colonne su schermi medi (md:) e sopra -->
+        
             <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-5 w-full">
                 <!-- Card Dashboard -->
                 <div class=" bg-indigo-600 md:col-span-2 p-6 rounded-lg shadow-lg flex flex-col justify-center items-start">
@@ -49,8 +49,16 @@
                     </ul>
                 </div>
                 <!-- Card Note personali -->
-                <div class="card bg-indigo-600 col-span-full p-6 rounded-lg shadow-lg">
-                    <h1 class="font-bold text-3xl mb-4">Note personali</h1>
+                <div class=" bg-indigo-600 col-span-full p-6 rounded-lg shadow-lg">
+                    <div class="flex justify-between">
+                        <h1 class="font-bold text-3xl mb-4">Note personali</h1>
+                        <div>
+
+                            <button class="bg-indigo-500 text-white p-2 rounded-md"><i
+                                    class="fa-solid fa-plus text-white"></i></button>
+                        </div>
+
+                    </div>
                     <div class="grid md:grid-cols-4 sm:grid-cols-1 gap-5">
 
                         <div class="bg-indigo-700 p-4 rounded-md">
