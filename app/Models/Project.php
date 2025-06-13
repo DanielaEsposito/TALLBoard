@@ -6,9 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    public function user()
+    protected $fillable = [
+        'name',
+        'description',
+        'due_date',
+        'status',
+
+    ];
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class);
     }
     public function tasks()
     {

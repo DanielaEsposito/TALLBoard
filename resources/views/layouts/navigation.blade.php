@@ -33,6 +33,13 @@
                                     </x-responsive-nav-link>
                                 </div>
                             </li>
+                            <li>
+                                <div class="w-full">
+                                    <x-responsive-nav-link :href="route('notes')" :active="request()->routeIs('notes')">
+                                        {{ __('Note') }}
+                                    </x-responsive-nav-link>
+                                </div>
+                            </li>
                         </ul>
 
 
@@ -76,8 +83,15 @@
                     <x-responsive-nav-link :href="route('profile.edit')">
                         {{ Auth::user()->name }}
                     </x-responsive-nav-link>
+                </div>
+                <div class="mt-3 space-y-1">
+                    <x-responsive-nav-link :href="route('notes')">
+                        {{ __('Note') }}
+                    </x-responsive-nav-link>
+                </div>
 
-                    <!-- Authentication -->
+                <!-- Authentication -->
+                <div class="mt-3 space-y-1">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
 
