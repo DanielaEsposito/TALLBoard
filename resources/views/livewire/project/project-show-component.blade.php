@@ -1,5 +1,5 @@
 <div>
-    <div class="p-6 text-white min-h-screen bg-gray-900">
+    <div class="p-6 text-white  bg-gray-900">
         <div class="wrapper max-w-7xl mx-auto">
 
             <h2 class="text-lg font-bold mb-4">Dettagli Progetto</h2>
@@ -19,20 +19,14 @@
 
         </div>
     </div>
-    <div class="p-6 text-white min-h-screen bg-gray-900">
-        <div class="wrapper max-w-7xl mx-auto">
-            <h2 class="text-lg font-bold mb-4">Attività del Progetto</h2>
+    <div class="p-6 text-white  bg-gray-900">
+        <div class=" max-w-7xl mx-auto">
+            <h2 class="text-lg font-bold mb-4">Tasks</h2>
 
             @if ($project->tasks->isEmpty())
-                <p class="text-gray-300">Non ci sono attività associate a questo progetto.</p>
+                <p class="text-gray-300">Non ci sono tasks associate a questo progetto.</p>
             @else
-                @foreach ($project->tasks as $task)
-                    <div class="bg-gray-700 rounded-md p-4 mb-2">
-                        <h4 class="font-semibold">{{ $task->name }}</h4>
-                        <p>{{ $task->description }}</p>
-                        <p>Stato: {{ ucfirst($task->status) }}</p>
-                    </div>
-                @endforeach
+                <livewire:tasks.tasks-list-component :projectId="$project->id" />
             @endif
 
         </div>
