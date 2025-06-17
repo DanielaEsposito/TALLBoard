@@ -35,7 +35,13 @@
 
             <!-- Page Content -->
             <main class="md:ml-[300px] p-6 md:overflow-y-auto">
-                @yield('content')
+                <!-- $slot mi serve per utilizzare lo spazio dello yeadl nei componenti livewire per quando devo creare una spa -->
+                @if (isset($slot))
+                    {{ $slot }}
+                @else
+                    @yield('content')
+                @endif
+
             </main>
         </div>
     </div>

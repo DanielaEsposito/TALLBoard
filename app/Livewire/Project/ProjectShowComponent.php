@@ -8,13 +8,17 @@ use Livewire\Component;
 class ProjectShowComponent extends Component
 {
     public $project;
-
-    public function mount(Project $project)
+    public $projectId;
+    public function mount()
     {
-        $this->project = $project;
+        if ($this->projectId) {
+
+            $this->project = Project::find($this->projectId);
+        }
     }
     public function render()
     {
+
         return view('livewire.project.project-show-component');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Project\ProjectPageComponent;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,9 +11,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/projects', function () {
-    return view('projects');
-})->middleware(['auth', 'verified'])->name('projects');
+
+
+Route::get('/projects', ProjectPageComponent::class)
+    ->middleware(['auth', 'verified'])
+    ->name('projects');
 
 Route::get('/notes', function () {
     return view('notes');

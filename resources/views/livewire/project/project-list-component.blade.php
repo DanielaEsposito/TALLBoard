@@ -3,6 +3,8 @@
     {{-- The best athlete wants his opponent at his best. --}}
     <div class="p-6 text-white min-h-screen bg-gray-900">
         <div class="wrapper max-w-7xl mx-auto">
+            {{-- <button class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500"></button> --}}
+            <button wire:click="$dispatch('createProject')">Crea progetto</button>
 
             <h2 class="text-lg font-bold mb-4">Progetti</h2>
             <!-- Card Progetti -->
@@ -18,8 +20,9 @@
                     </div>
 
                     @foreach ($projects as $project)
-                        <div
-                            class="rounded-md border border-indigo-900 bg-indigo-700 text-center flex flex-col justify-between cursor-pointer ">
+                        <div class="rounded-md border border-indigo-900 bg-indigo-700 text-center flex flex-col justify-between cursor-pointer "
+                            wire:click="$dispatch('showProject', [{{ $project->id }}])">
+
                             <div class="bg-indigo-200 rounded-t-md w-full h-32">
 
                             </div>

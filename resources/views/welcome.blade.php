@@ -23,11 +23,13 @@
             <div class="text-center px-6">
                 <h1 class="text-3xl font-bold mb-2">Benvenuto!</h1>
                 <p class="text-lg">Organizza le tue attività in modo semplice ed efficace.</p>
+                <p class="text-lg mt-4" x-text="register"></p>
             </div>
         </div>
 
         <!-- Colonna Login -->
-        <div class="w-1/2 flex items-center flex-col justify-center bg-white z-0">
+        <div class="w-1/2 flex items-center flex-col justify-center bg-white z-0"
+            :class="register ? 'visible' : 'invisible'">
             <h1 class="text-2xl font-bold text-gray-900 mb-4">Login</h1>
 
             <!-- Session Status -->
@@ -85,7 +87,7 @@
         </div>
 
         <!-- Colonna Registrazione -->
-        <div class="w-1/2 flex items-center flex-col justify-center z-0">
+        <div class="w-1/2 flex items-center flex-col justify-center z-0" :class="register ? 'invisible' : 'visible'">
             <h1 class="text-2xl font-bold text-gray-900 mb-4">Registrati</h1>
             <form method="POST" action="{{ route('register') }}">
                 @csrf

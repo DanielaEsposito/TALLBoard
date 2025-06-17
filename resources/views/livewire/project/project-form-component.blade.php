@@ -1,6 +1,6 @@
 <div>
 
-    <form wire:submit.prevent="submit">
+    <form wire:submit.prevent="save">
         <div class="mb-4">
             <label for="name" class="block text-sm font-medium text-gray-300">Nome del Progetto</label>
             <input type="text" id="name" wire:model="name"
@@ -81,9 +81,16 @@
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
 
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between mt-6">
                 <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500">Crea
                     Progetto</button>
             </div>
     </form>
+    @if (session()->has('message'))
+        <div class="bg-green-500 text-white p-4 mt-6 rounded">
+            {{ session('message') }}
+        </div>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500"
+            wire:click="$dispatch('backToList')">Torna alla Lista</button>
+    @endif
 </div>
